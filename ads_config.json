@@ -1,5 +1,5 @@
 {
-  "global_ads_enabled": true,
+  "global_ads_enabled": false,
   "config_version": 1,
   "apps": {
     "malayalam": {
