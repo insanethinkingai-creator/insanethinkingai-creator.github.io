@@ -1,9 +1,11 @@
 {
   "global_ads_enabled": false,
+  "global_notifications_enabled": true,
   "config_version": 1,
   "apps": {
     "malayalam": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.MalayalamRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4382069018",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/1827134614",
@@ -11,6 +13,7 @@
     },
     "marathi": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.MarathiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~2905335815",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/7195934616",
@@ -25,6 +28,7 @@
     },
     "hindi": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.HindiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~3295922412",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/3515414268",
@@ -32,6 +36,7 @@
     },
     "arabic": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.ArabicRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~7335535414",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/8993107231",
@@ -46,6 +51,7 @@
     },
     "french": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.FrenchRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4105740507",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/2280254025",
@@ -53,6 +59,7 @@
     },
     "telugu": {
       "ads_enabled": true,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.TeluguRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~5858802216",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/1149401017",
