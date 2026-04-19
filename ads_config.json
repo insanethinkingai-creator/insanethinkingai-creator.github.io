@@ -21,6 +21,7 @@
     },
     "tamil": {
       "ads_enabled": false,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.TamilRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4242468214",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/2486533414",
@@ -44,6 +45,7 @@
     },
     "punjabi": {
       "ads_enabled": false,
+       "notifications_enabled": true,
       "package_name": "com.MyWorld.PunjabiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~1896122613",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/4849589017",
