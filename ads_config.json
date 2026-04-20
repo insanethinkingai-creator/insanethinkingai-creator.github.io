@@ -4,7 +4,7 @@
   "config_version": 1,
   "apps": {
     "malayalam": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.MalayalamRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4382069018",
@@ -12,7 +12,7 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/9115435416"
     },
     "marathi": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.MarathiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~2905335815",
@@ -20,7 +20,7 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/5509052597"
     },
     "tamil": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.TamilRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4242468214",
@@ -28,7 +28,7 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/8927828612"
     },
     "hindi": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.HindiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~3295922412",
@@ -36,7 +36,7 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/8356677401"
     },
     "arabic": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.ArabicRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~7335535414",
@@ -60,7 +60,7 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/7781261636"
     },
     "telugu": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.TeluguRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~5858802216",
