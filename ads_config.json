@@ -4,38 +4,49 @@
   "config_version": 1,
   "apps": {
     "malayalam": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
+       "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "package_name": "com.MyWorld.MalayalamRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4382069018",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/1827134614",
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/9115435416"
     },
     "marathi": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
+       "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "package_name": "com.MyWorld.MarathiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~2905335815",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/7195934616",
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/5509052597"
     },
     "tamil": {
-      "ads_enabled": false,
+      "ads_enabled": true,
+      "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
+      "notifications_enabled": true,
       "package_name": "com.MyWorld.TamilRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4242468214",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/2486533414",
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/8927828612"
     },
     "hindi": {
-      "ads_enabled": false,
+      "ads_enabled": true,
       "notifications_enabled": true,
+      "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "package_name": "com.MyWorld.HindiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~3295922412",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/3515414268",
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/8356677401"
     },
     "arabic": {
-      "ads_enabled": false,
+      "ads_enabled": true,
+      "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.ArabicRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~7335535414",
@@ -44,6 +55,9 @@
     },
     "punjabi": {
       "ads_enabled": false,
+      "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
+       "notifications_enabled": true,
       "package_name": "com.MyWorld.PunjabiRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~1896122613",
       "banner_ad_unit_id": "ca-app-pub-9317713735100349/4849589017",
@@ -51,6 +65,8 @@
     },
     "french": {
       "ads_enabled": true,
+      "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.FrenchRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~4105740507",
@@ -58,7 +74,9 @@
       "interstitial_ad_unit_id": "ca-app-pub-9317713735100349/7781261636"
     },
     "telugu": {
-      "ads_enabled": false,
+      "ads_enabled": true,
+     "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.TeluguRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~5858802216",
@@ -67,6 +85,8 @@
     },
     "kannada": {
       "ads_enabled": true,
+       "banner_ads_enabled": true,
+      "interstitial_ads_enabled": true,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.KannadaRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~5842198278",
@@ -75,6 +95,8 @@
     },
     "gujarati": {
       "ads_enabled": true,
+       "banner_ads_enabled": true,
+      "interstitial_ads_enabled": false,
       "notifications_enabled": true,
       "package_name": "com.MyWorld.TeluguRadio",
       "admob_app_id": "ca-app-pub-9317713735100349~3216034932",
