@@ -1,0 +1,56 @@
+name: Build Dynamic Site
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'metadata/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm install
+      
+      - name: Build site
+        working-directory: scripts
+        run: npm run build
+      
+      - name: Check for changes
+        id: verify
+        run: |
+          if git diff --quiet apps/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push generated files
+        if: steps.verify.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add apps/
+          git commit -m "chore: regenerate dynamic site from metadata [skip ci]"
+          git push
+      
+      - name: Comment on success
+        if: steps.verify.outputs.changed == 'true'
+        run: |
+          echo "✅ Site built successfully!"
+          echo "📂 Generated files:"
+          ls -lh apps/

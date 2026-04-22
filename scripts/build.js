@@ -223,11 +223,11 @@ function generateDetailPage(flavor, metadata) {
   
   let html = detailTemplate;
   
-  // Replace placeholders
-  html = html.replace('{{FLAVOR_NAME}}', displayName);
-  html = html.replace('{{TITLE}}', metadata.title);
-  html = html.replace('{{SHORT_DESCRIPTION}}', metadata.shortDescription);
-  html = html.replace('{{APP_IMAGE}}', imagePath);
+  // Replace placeholders (use replaceAll to handle multiple occurrences)
+  html = html.replaceAll('{{FLAVOR_NAME}}', displayName);
+  html = html.replaceAll('{{TITLE}}', metadata.title);
+  html = html.replaceAll('{{SHORT_DESCRIPTION}}', metadata.shortDescription);
+  html = html.replaceAll('{{APP_IMAGE}}', imagePath);
   
   // Generate sections
   let sectionsHtml = '';
@@ -246,7 +246,7 @@ function generateDetailPage(flavor, metadata) {
   // Video
   sectionsHtml += generateVideoSection(metadata);
   
-  html = html.replace('{{CONTENT_SECTIONS}}', sectionsHtml);
+  html = html.replaceAll('{{CONTENT_SECTIONS}}', sectionsHtml);
   
   return html;
 }
