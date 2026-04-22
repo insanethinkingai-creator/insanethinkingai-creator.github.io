@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arabic Radio Online - AppsDroid MyWorld</title>
+  <meta name="description" content="Listen to Arabic internet radio stations on your android phone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{SHORT_DESCRIPTION}}">
+  <meta property="og:url" content="https://insanethinkingai-creator.github.io/apps/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://insanethinkingai-creator.github.io/apps/">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #1e1e2e;
+      --surface2: #1c1c28;
+      --border: rgba(255,255,255,0.07);
+      --text: #f0eff8;
+      --muted: #a0a0b8;
+      --accent: #e91e8c;
+      --gold: #ffd54f;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 20px 24px 0 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 80px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin: 40px 0 60px 0;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .app-image {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .app-info h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #fff 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .app-description {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 32px;
+      background: linear-gradient(135deg, var(--accent), #ff1493);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(233, 30, 140, 0.4);
+    }
+
+    .content-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    section {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff;
+    }
+
+    .description-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text);
+      word-wrap: break-word;
+    }
+
+    .screenshots-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .device-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .screenshots-gallery {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .screenshots-gallery.active {
+      display: grid;
+    }
+
+    .screenshot {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .screenshot:hover {
+      transform: scale(1.05);
+    }
+
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .video-container {
+      width: 100%;
+      padding-top: 56.25%;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface2);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-top: 60px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .app-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .app-info h1 {
+        font-size: 1.8rem;
+      }
+
+      .screenshots-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">← Back to Apps</a>
+
+<main>
+  <div class="app-header">
+    <div>
+      <img src="../metadata/arabic/en-US/images/phoneScreenshots/1_en-US.png" alt="{{TITLE}}" class="app-image"/>
+    </div>
+    <div class="app-info">
+      <h1>{{TITLE}}</h1>
+      <p class="app-description">{{SHORT_DESCRIPTION}}</p>
+      <a href="https://play.google.com/store/search?q=Arabic&c=apps" class="cta-button">Get on Google Play</a>
+    </div>
+  </div>
+
+  <div class="content-sections">
+    <section class="description-section">
+      <h3>About</h3>
+      <p>Listen to online Arabic radio stations worldwide. This simple application let's you listen your favorite tunes in the background over WiFi or Mobile Data.
+
+All the radio stations are streamed available for free on internet.
+Do give your feedback and comments.</p>
+    </section>
+<section class="screenshots-section">
+<h3>Screenshots</h3>
+<div class="device-tabs"><button class="tab-btn active" data-device="phoneScreenshots">Phone</button></div><div class="screenshots-gallery active" data-device="phoneScreenshots"><img src="../metadata/arabic/en-US/images/phoneScreenshots/1_en-US.png" alt="Screenshot" class="screenshot" loading="lazy"/><img src="../metadata/arabic/en-US/images/phoneScreenshots/2_en-US.png" alt="Screenshot" class="screenshot" loading="lazy"/><img src="../metadata/arabic/en-US/images/phoneScreenshots/3_en-US.png" alt="Screenshot" class="screenshot" loading="lazy"/><img src="../metadata/arabic/en-US/images/phoneScreenshots/4_en-US.png" alt="Screenshot" class="screenshot" loading="lazy"/><img src="../metadata/arabic/en-US/images/phoneScreenshots/5_en-US.png" alt="Screenshot" class="screenshot" loading="lazy"/></div></section>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 AppsDroid MyWorld. <a href="/">Back to main site</a></p>
+</footer>
+
+<script>
+  // Tab switching for screenshots
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const device = this.dataset.device;
+      
+      // Deactivate all tabs and galleries
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.screenshots-gallery').forEach(g => g.classList.remove('active'));
+      
+      // Activate selected tab and gallery
+      this.classList.add('active');
+      document.querySelector(`.screenshots-gallery[data-device="${device}"]`).classList.add('active');
+    });
+  });
+
+  // Lazy loading for images (fallback)
+  if (!('loading' in HTMLImageElement.prototype)) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    images.forEach(img => imageObserver.observe(img));
+  }
+</script>
+
+</body>
+</html>
