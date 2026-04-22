@@ -123,10 +123,19 @@ function getYouTubeEmbedUrl(videoText) {
 // Generate HTML for app cards (for index page)
 function generateAppCard(flavor, metadata, index) {
   const displayName = flavor.name.charAt(0).toUpperCase() + flavor.name.slice(1);
-  const primaryImage = metadata.screenshots.phoneScreenshots?.[0] || '../images/appsdroid_icon_512x512.png';
-  const imagePath = primaryImage === '../images/appsdroid_icon_512x512.png' 
-    ? primaryImage 
-    : `../metadata/${flavor.name}/${LOCALE}/images/phoneScreenshots/${primaryImage}`;
+  
+  // Prefer icon > featureGraphic > first screenshot
+  const iconPath = path.join(flavor.path, 'images/icon.png');
+  const featurePath = path.join(flavor.path, 'images/featureGraphic.png') || path.join(flavor.path, 'images/featureGraphic.jpeg');
+  
+  let imagePath = '../images/appsdroid_icon_512x512.png';
+  if (fs.existsSync(iconPath)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/icon.png`;
+  } else if (fs.existsSync(featurePath)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/featureGraphic.png`;
+  } else if (metadata.screenshots.phoneScreenshots?.[0]) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/phoneScreenshots/${metadata.screenshots.phoneScreenshots[0]}`;
+  }
   
   return `
     <a class="card" href="app-${flavor.name}.html" style="animation-delay:${(index * 0.07).toFixed(2)}s">
