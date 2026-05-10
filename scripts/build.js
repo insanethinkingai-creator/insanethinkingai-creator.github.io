@@ -228,10 +228,22 @@ function generateVideoSection(metadata) {
 function generateDetailPage(flavor, metadata) {
   metadata._flavor = flavor.name;
   const displayName = flavor.name.charAt(0).toUpperCase() + flavor.name.slice(1);
-  const primaryImage = metadata.screenshots.phoneScreenshots?.[0] || '../images/appsdroid_icon_512x512.png';
-  const imagePath = primaryImage === '../images/appsdroid_icon_512x512.png' 
-    ? primaryImage 
-    : `../metadata/${flavor.name}/${LOCALE}/images/phoneScreenshots/${primaryImage}`;
+  
+  // Use same priority as app cards: icon > featureGraphic > first screenshot
+  const iconPath = path.join(flavor.path, 'images/icon.png');
+  const featurePathPng = path.join(flavor.path, 'images/featureGraphic.png');
+  const featurePathJpeg = path.join(flavor.path, 'images/featureGraphic.jpeg');
+  
+  let imagePath = '../images/appsdroid_icon_512x512.png';
+  if (fs.existsSync(iconPath)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/icon.png`;
+  } else if (fs.existsSync(featurePathPng)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/featureGraphic.png`;
+  } else if (fs.existsSync(featurePathJpeg)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/featureGraphic.jpeg`;
+  } else if (metadata.screenshots.phoneScreenshots?.[0]) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/phoneScreenshots/${metadata.screenshots.phoneScreenshots[0]}`;
+  }
   
   let html = detailTemplate;
   
