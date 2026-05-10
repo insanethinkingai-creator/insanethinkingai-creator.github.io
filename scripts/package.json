@@ -1,0 +1,12 @@
+{
+  "name": "metadata-site-generator",
+  "version": "1.0.0",
+  "description": "Generate dynamic HTML pages from metadata folder",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "glob": "^10.3.3"
+  }
+}
