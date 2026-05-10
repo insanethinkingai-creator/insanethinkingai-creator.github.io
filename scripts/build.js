@@ -126,13 +126,16 @@ function generateAppCard(flavor, metadata, index) {
   
   // Prefer icon > featureGraphic > first screenshot
   const iconPath = path.join(flavor.path, 'images/icon.png');
-  const featurePath = path.join(flavor.path, 'images/featureGraphic.png') || path.join(flavor.path, 'images/featureGraphic.jpeg');
+  const featurePathPng = path.join(flavor.path, 'images/featureGraphic.png');
+  const featurePathJpeg = path.join(flavor.path, 'images/featureGraphic.jpeg');
   
   let imagePath = '../images/appsdroid_icon_512x512.png';
   if (fs.existsSync(iconPath)) {
     imagePath = `../metadata/${flavor.name}/${LOCALE}/images/icon.png`;
-  } else if (fs.existsSync(featurePath)) {
+  } else if (fs.existsSync(featurePathPng)) {
     imagePath = `../metadata/${flavor.name}/${LOCALE}/images/featureGraphic.png`;
+  } else if (fs.existsSync(featurePathJpeg)) {
+    imagePath = `../metadata/${flavor.name}/${LOCALE}/images/featureGraphic.jpeg`;
   } else if (metadata.screenshots.phoneScreenshots?.[0]) {
     imagePath = `../metadata/${flavor.name}/${LOCALE}/images/phoneScreenshots/${metadata.screenshots.phoneScreenshots[0]}`;
   }
